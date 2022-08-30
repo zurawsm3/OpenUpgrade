@@ -27,5 +27,8 @@ def migrate(env, version):
             "group_hr_timesheet_approver",
         ],
         True,
+    ),
+    openupgrade.delete_records_safely_by_xml_id(
+        env, ["hr_timesheet.act_hr_timesheet_line"]
     )
     _fill_task_overtime(env)
